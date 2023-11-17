@@ -1,4 +1,5 @@
 import {default as PageLogin} from "@/views/pages/auth/login/Main";
+import {default as Homepage} from "@/views/pages/Homepage";
 import {default as PageRegister} from "@/views/pages/auth/register/Main";
 import {default as PageResetPassword} from "@/views/pages/auth/reset-password/Main";
 import {default as PageForgotPassword} from "@/views/pages/auth/forgot-password/Main";
@@ -10,6 +11,7 @@ import {default as PageProfile} from "@/views/pages/private/profile/Main";
 import {default as PageUsers} from "@/views/pages/private/users/Index";
 import {default as PageUsersCreate} from "@/views/pages/private/users/Create";
 import {default as PageUsersEdit} from "@/views/pages/private/users/Edit";
+import {default as Website} from "@/views/pages/Website";
 
 import abilities from "@/stub/abilities";
 
@@ -17,8 +19,14 @@ const routes = [
     {
         name: "home",
         path: "/",
-        meta: {requiresAuth: false, isPublicAuthPage: true},
-        component: PageLogin,
+        meta: {requiresAuth: false},
+        component: Homepage,
+    },
+    {
+        name: "website",
+        path: "/site/:site",
+        meta: {requiresAuth: false},
+        component: Website,
     },
     {
         name: "panel",
